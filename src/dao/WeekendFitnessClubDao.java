@@ -340,9 +340,25 @@ public class WeekendFitnessClubDao {
 
 			Map<String, ArrayList<Integer>> newLessons = null;
 			if (newDay.equals("Saturday")) {
-				newLessons = saturdayLessons1;
+				if (weekend.equals("1"))
+					newLessons = saturdayLessons1;
+				if (weekend.equals("2"))
+					newLessons = saturdayLessons2;
+				if (weekend.equals("3"))
+					newLessons = saturdayLessons3;
+				if (weekend.equals("4"))
+					newLessons = saturdayLessons4;
+
 			} else if (newDay.equals("Sunday")) {
-				newLessons = sundayLessons1;
+				if (weekend.equals("1"))
+					newLessons = sundayLessons1;
+				if (weekend.equals("2"))
+					newLessons = sundayLessons2;
+				if (weekend.equals("3"))
+					newLessons = sundayLessons3;
+				if (weekend.equals("4"))
+					newLessons = sundayLessons4;
+
 			} else {
 				System.out.println("Sorry, invalid day. try again");
 				return false;
@@ -366,7 +382,7 @@ public class WeekendFitnessClubDao {
 				return false;
 			} else {
 				newCustomers.add(customerId);
-				newLessons.put(newLessonType + newDay, newCustomers);
+				newLessons.put(newLessonType + newDay+customerId, newCustomers);
 				lessons.remove(lessonType + day + customerId, customers);
 				System.out.println("Booking Updated successfully.");
 				return true;
