@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import model.FitnessReportModel;
-import model.Lesson;
 
 public class FitnessLessonReportDao {
 	public void fitnessLessonReport() {

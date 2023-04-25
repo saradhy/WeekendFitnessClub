@@ -85,6 +85,7 @@ public class WeekendFitnessClubDao {
 
 		// Prompt user for reviews and ratings
 		while (true) {
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter a customer ID (or 'q' to quit): ");
 			String customerID = sc.nextLine();
