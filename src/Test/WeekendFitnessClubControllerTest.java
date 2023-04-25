@@ -17,12 +17,11 @@ import controller.WeekendFitnessClubController;
 
 public class WeekendFitnessClubControllerTest {
 
-	private WeekendFitnessClubController controller;
 	private ByteArrayOutputStream output;
 
 	@Before
 	public void setUp() {
-		controller = new WeekendFitnessClubController();
+		new WeekendFitnessClubController();
 		output = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(output));
 	}
@@ -32,7 +31,7 @@ public class WeekendFitnessClubControllerTest {
 		String input = "1\n0\n";
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-		controller = new WeekendFitnessClubController();
+		new WeekendFitnessClubController();
 
 		String expectedOutput = "* Weekend Fitness Club Management System *\r\n" + "1. Book a group fitness lesson\r\n"
 				+ "2. Cancel a booking\r\n" + "3. Change a booking\r\n" + "4. Attend a lesson\r\n"
@@ -48,7 +47,7 @@ public class WeekendFitnessClubControllerTest {
 		String input = "1\n1\n0\n";
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-		controller = new WeekendFitnessClubController();
+		new WeekendFitnessClubController();
 
 		String expectedOutput = "Enter your customer ID: \r\n" + "Enter the weekend for booking " + "Enter the type of lesson to book (Yoga, Zumba, or Pilates): \r\n"
 				+ "Enter the number of people booking the lesson (max 5): \r\n" + "Booking successful.\r\n"
@@ -62,7 +61,7 @@ public class WeekendFitnessClubControllerTest {
 		String input = "2\n1\n0\n";
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-		controller = new WeekendFitnessClubController();
+		new WeekendFitnessClubController();
 
 		String expectedOutput = "Enter your customer ID: \r\n" + "Enter the weekend for booking: \r\n"
 				+ "Enter the day (Saturday or Sunday): \r\n" + "Enter the type of lesson to cancel: \r\n"
@@ -77,7 +76,7 @@ public class WeekendFitnessClubControllerTest {
 		String input = "3\n1\n0\n";
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-		controller = new WeekendFitnessClubController();
+		new WeekendFitnessClubController();
 
 		String expectedOutput = "Enter your customer ID: \r\n" + "Enter the weekend for booking: \r\n"
 				+ "Enter the day (Saturday or Sunday): \r\n" + "Enter the type of lesson to change: \r\n"
@@ -86,5 +85,6 @@ public class WeekendFitnessClubControllerTest {
 
 		assertEquals(expectedOutput, output.toString());
 	}
+	
 
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import dao.FitnessLessonReportDao;
@@ -33,7 +34,14 @@ public class WeekendFitnessClubController {
 			System.out.printf("| %1s * %-8s                            |%n", "0", "EXIT MENU");
 			System.out.println("____________________________________________");
 			System.out.println("Enter your choice: ");
-			choice = scanner.nextInt();
+			try {
+				choice = scanner.nextInt();
+			} catch (InputMismatchException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Invalid input: please enter an integer");
+                scanner.nextLine(); // clear input buffer
+                continue;
+			}
 			switch (choice) {
 			case 1:
 				clubDao.bookLesson();
