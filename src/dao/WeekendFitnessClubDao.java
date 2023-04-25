@@ -377,7 +377,7 @@ public class WeekendFitnessClubDao {
 
 	}
 
-	public void patternMatchWithCountdisplay(String daySelect, String[] fitnessLessons,
+	private void patternMatchWithCountdisplay(String daySelect, String[] fitnessLessons,
 			Map<String, ArrayList<Integer>> lessonMap) {
 
 		String pattern = "";
